@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-image: url('/img/list_background.png');
+        }
+    </style>
+</head>
+<body style = "text-align: center;">
+    <h1>
+        <a href="/index.html" style = "display: block; text-align: center; margin-top: 150px; color: brown;">DIARY</a>
+    </h1>
+    <h2>목록</h2>
+    <button id="allDelete">전체 삭제</button>
+    <table border="1" style = "text-align: center; margin: 0 auto; margin-top: 50px; width: 60%;">
+        <thead>
+            <tr>
+                <td>번호</td>
+                <td>제목</td>
+                <td>작성자</td>
+                <td>작성일</td>
+                <td>작성시간</td>
+                <td>조회수</td>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+    <a href="/board/write.html">일기 작성</a>
+    <script src="/public/list.js"></script>
+</body>
+</html>

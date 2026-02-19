@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-image: url('/img/list_background.png');
+        }
+    </style>
+</head>
+<body style = "text-align: center;">
+    
+    <h1>
+        <a href="/index.html" style = "display: block; text-align: center; margin-top: 150px; color: brown;">DIARY</a>
+    </h1>
+    <h2>일기 작성</h2>
+
+    <form id="writeFrm">
+        <div>제목 : <input type="text" name="subject" style = "width: 50%; height: 30px;" /></div>
+        <div>작성자 : <input type="text" name="writer" style = "width: 50%; height: 30px;" /></div>
+        <div>내용 : <textarea name="content" style = "width: 50%; height: 300px;" ></textarea></div>
+        <input type="submit" value="작성하기" style = "width: 5%; height: 30px;" />
+    </form>
+    <a href="/board/list.html">뒤로가기</a>
+    <script src="/public/write.js"></script>
+</body>
+</html>
