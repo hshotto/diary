@@ -1,7 +1,7 @@
 const writeFrm = document.querySelector("#writeFrm");
 
 class Board {
-    constructor(indexNum, subjectStr, writerStr, contentStr) {
+    constructor(indexNum, subjectStr, writerStr, contentStr, moodStr) {
         this.index = indexNum;
         this.Subject = subjectStr;
         this.Writer = writerStr;
@@ -9,6 +9,7 @@ class Board {
         this.date = recordDate();
         this.time = recordTime();
         this.views = 0;
+        this.mood = moodStr;
     }
 
     set Subject(value) {
@@ -35,6 +36,9 @@ class Board {
     }
     set Time(value) {
         this.time = value;
+    }
+    set Mood(value) {
+        this.mood = value;
     }
 }
 
@@ -69,11 +73,11 @@ const submitHandler = (e) => {
     const subject = e.target.subject.value;
     const writer = e.target.writer.value;
     const content = e.target.content.value;
-
+    const mood = Array.from(e.target.mood).filter(item => item.checked).map(item => item.value);
     try {
         const boardObj = JSON.parse(localStorage.getItem("board"));
         const index = boardObj.length;
-        const instance = new Board(index, subject, writer, content);
+        const instance = new Board(index, subject, writer, content, mood);
         boardObj.push(instance);
 
         const boardStr = JSON.stringify(boardObj);

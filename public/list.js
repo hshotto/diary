@@ -17,6 +17,7 @@ const template = (index, objValue) => {
         <td>${objValue.date}</td>
         <td>${objValue.time}</td>
         <td>${objValue.views}</td>
+        <td>${objValue.mood === undefined ? "-" : objValue.mood}</td>
     </tr>
     `;
 };
@@ -29,7 +30,6 @@ for (let i = 0; i < boardObj.length; i++) {
 
 const items = Array.from(document.querySelectorAll("tbody tr td:nth-child(2)")).map(item => item.innerText);
 const searchInput = document.getElementById('searchInput');
-const list = document.querySelector("#searchResult");
 
 searchInput.addEventListener('keyup', (e) => {
     const keyword = e.target.value.toLowerCase();

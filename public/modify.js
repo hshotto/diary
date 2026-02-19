@@ -24,13 +24,13 @@ const modifyHandler = (e) => {
     const subject = e.target.subject.value;
     const writer = e.target.writer.value;
     const content = e.target.content.value;
-    
+    const mood = Array.from(e.target.mood).filter(item => item.checked).map(item => item.value);
     try {
         isEmpty(subject, writer, content);
         board.subject = subject;
         board.writer = writer;
         board.content = content;
-
+        board.mood = mood;
         const boardStr = JSON.stringify(boardObj);
         localStorage.setItem("board", boardStr);
         location.href = '/board/view.html?index=' + index;

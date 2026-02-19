@@ -8,6 +8,7 @@
     <style>
         body {
             background-image: url('/img/list_background.png');
+            background-size: cover;
         }
     </style>
 </head>
@@ -22,6 +23,17 @@
         <div>제목 : <input type="text" name="subject" style = "width: 50%; height: 30px;" /></div>
         <div>작성자 : <input type="text" name="writer" style = "width: 50%; height: 30px;" /></div>
         <div>내용 : <textarea name="content" style = "width: 50%; height: 300px;" ></textarea></div>
+        <div>오늘 기분: 
+            <input type = "radio" name = "mood" value = "😀"> <span style = "font-size: 2em;">😀</span>
+            <input type = "radio" name = "mood" value = "😢"> <span style = "font-size: 2em;">😢</span>
+            <input type = "radio" name = "mood" value = "😠"> <span style = "font-size: 2em;">😠</span>
+            <input type = "radio" name = "mood" value = "😲"> <span style = "font-size: 2em;">😲</span>
+            <input type = "radio" name = "mood" value = "😕"> <span style = "font-size: 2em;">😕</span>
+            <input type = "radio" name = "mood" value = "😁"> <span style = "font-size: 2em;">😁</span>
+            <input type = "radio" name = "mood" value = "😞"> <span style = "font-size: 2em;">😞</span>
+            <input type = "radio" name = "mood" value = "😨"> <span style = "font-size: 2em;">😨</span>
+            <input type = "radio" name = "mood" value = "😖"> <span style = "font-size: 2em;">😖</span>
+        </div>
         <input type="submit" value="작성하기" style = "width: 5%; height: 30px;" />
     </form>
     <a href="/board/list.html">뒤로가기</a>
