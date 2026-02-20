@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
     <title>Document</title>
     <style>
         body {
@@ -14,13 +18,27 @@
 </head>
 <body style = "text-align: center;">
     <h1>
-        <a href="/index.html" style = "display: block; text-align: center; margin-top: 150px; color: brown;">DIARY</a>
+        <a href="/index.html" style = "display: block; text-align: center; margin-top: 200px; color: brown;">DIARY</a>
     </h1>
     <h2>목록</h2>
     <button id="allDelete">전체 삭제</button>
     <div class = "SearchBox">
-        <input type = "text" id = "searchInput" placeholder = "검색어를 입력하세요">
+        <input type = "text" id = "searchInput" placeholder = "검색어를 입력하세요" >
     </div>
+    <input type="text" name="daterange" id="daterange" placeholder="날짜 범위를 선택하세요">
+    <script src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <script>
+        $(function() {
+          $('input[name="daterange"]').daterangepicker({
+            opens: 'left',
+            autoUpdateInput: false,
+          }, function(start, end, label) {
+            $(this.element).val(start.format('YYYY-MM-DD') + ' - ' + end.format('YYYY-MM-DD'));
+            filterByDate(start, end);
+          });
+        });
+    </script>
+    
     <table border="1" style = "text-align: center; margin: 0 auto; margin-top: 50px; width: 60%;">
         <thead>
             <tr>
